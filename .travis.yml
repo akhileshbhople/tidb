@@ -18,5 +18,5 @@ before_install:
   - bash gitcookie.sh
 script:
 #  - make dev
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then make dev; fi
+#  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then make dev; fi
   - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then make default; fi
