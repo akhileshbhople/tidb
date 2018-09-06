@@ -1,4 +1,6 @@
 language: go
+os: linux-ppc64le
+dist: xenial
 
 go_import_path: github.com/pingcap/tidb
 
@@ -15,4 +17,6 @@ before_install:
   # See https://github.com/golang/go/issues/12933
   - bash gitcookie.sh
 script:
-  - make dev
+#  - make dev
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then make dev; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then make default; fi
